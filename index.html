@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Animation</title>
+    <style type="text/css">
+        .items{
+            border: 2px solid #939393;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            min-height: 200px;
+            max-height: 400px;
+            margin-top: 20px;
+            overflow: auto;
+        }
+        .items:hover{
+            min-height: 650px;
+        }
+        .lines{
+            display: flex;
+        }
+        .title{
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .sec-title{
+            font-size: 20px;
+        }
+        .sec-title:before{
+
+        }
+        .length{
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+            background: firebrick;
+            animation: lengthAnim 3s infinite alternate;
+            z-index: 2;
+        }
+        @keyframes lengthAnim {
+            0%{
+                transform: translate(0,0);
+            }
+            50%{
+                transform: translate(500px,100px);
+            }
+            100%{
+                transform: translate(0,200px);
+            }
+        }
+        .rotate{
+            margin-left: 100px;
+            width: 200px;
+            height: 200px;
+            background: aqua;
+            animation: rotateAnim 3s infinite;
+        }
+        @keyframes rotateAnim {
+            0%{
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            100%{
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        .scale{
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+            background: cornflowerblue;
+            animation: scaleAnim 3s infinite;
+        }
+        @keyframes scaleAnim {
+            0%{
+                transform: scale(1,1);
+            }
+            50%{
+                transform: scale(2,2);
+            }
+            100%{
+                transform: scale(0.1,0.5);
+            }
+        }
+        .skew{
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+            background: gold;
+            animation: skewAnim 3s infinite;
+        }
+        @keyframes skewAnim {
+            0%{
+                transform: skew(30deg,30deg);
+            }
+            50%{
+                transform: skew(0deg,30deg);
+            }
+            100%{
+                transform: skew(30deg,0deg);
+            }
+        }
+        .basic{
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+            background: gold;
+            animation: basicAnim 3s infinite alternate-reverse;
+        }
+        @keyframes basicAnim {
+            0%{
+                background: cornflowerblue;
+            }
+            50%{
+                background: blue;
+                width: 200px;
+            }
+            100%{
+                width: 50px;
+                background: blanchedalmond;
+            }
+        }
+    </style>
+    <style type="text/css">
+        .trans{
+            width: 200px;
+            height: 200px;
+            background: blueviolet;
+            -webkit-transition: background-color 4s;
+            -moz-transition: background-color 4s;
+            -ms-transition: background-color 4s;
+            -o-transition: background-color 4s;
+            transition: background-color 4s;
+        }
+        .trans:hover{
+            background-color: aqua;
+        }
+        .trans1{
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            background: blueviolet;
+            -webkit-transition: width 4s;
+            -moz-transition: width 4s;
+            -ms-transition: width 4s;
+            -o-transition: width 4s;
+            transition: width 4s;
+        }
+        .trans1:active{
+            background-color: aqua;
+            width: 400px;
+        }
+        a.redd{
+            color: forestgreen;
+        }
+        a.redd:visited{
+            color: red;
+        }
+        a.redd:link{
+            color: fuchsia;
+        }
+        a.redd:hover{
+            color: chartreuse;
+        }
+        p:first-child{
+            font-weight: bold;
+        }
+        li:first-child{
+            color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="items">
+            <div class="title">css动画-Animation</div>
+            <div class="lines">
+                <div class="sec-title">位移动画translate</div>
+                <div class="length"></div>
+            </div>
+            <div class="lines">
+                <div class="sec-title">旋转动画rotate</div>
+                <div class="rotate"></div>
+            </div>
+            <div class="lines">
+                <div class="sec-title">缩放动画screw</div>
+                <div class="scale"></div>
+            </div>
+            <div class="lines">
+                <div class="sec-title">形移动画skew</div>
+                <div class="skew"></div>
+            </div>
+            <div class="lines">
+                <div class="sec-title">基本动画</div>
+                <div class="basic"></div>
+            </div>
+        </div>
+        <div class="items">
+            <div class="title">css动画-RequestAnimationFrame</div>
+            <div id="request" style="width: 1px;height: 20px;background: red">0%</div>
+            <button id="run">Run</button>
+            <button id="cancel">Cancel</button>
+            <p id="start"></p>
+            <p id="end"></p>
+        </div>
+        <div class="items">
+            <div class="title">css动画-Transition-监听伪类</div>
+            <div class="trans"></div>
+            <div class="trans1"></div>
+            <a class="redd" href="index.html">CSS锚</a>
+            <p>These are the necessary steps:</p>
+            <ul>
+                <li>Intert Key</li>
+                <li>Turn key <strong>clockwise</strong></li>
+                <li>Push accelerator</li>
+            </ul>
+        </div>
+        <div class="items">
+            <div class="title">css元素-子元素</div>
+            <div class="lines">
+                <div class="sec-title">旋转动画rotate</div>
+                <div class="rotate"></div>
+            </div>
+            <div class="lines">
+                <div class="sec-title">旋转动画rotate</div>
+                <div class="rotate"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame
+            || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        var startTime = null;
+        var endTime = null;
+        var element = document.getElementById("request");
+        var progress = 0;
+        var request;
+        function step(timestamp) {
+            if (progress < 400){
+                progress += 1;
+                request = requestAnimationFrame(step)
+            } else {
+                endTime = new Date().toLocaleTimeString();
+                document.getElementById("end").innerText = endTime
+            }
+            if (progress % 4 == 0) {
+                element.style.width = progress + "px";
+                element.innerText = progress/4 + "%";
+            }
+        }
+        startTime = new Date().toLocaleTimeString();
+        request = requestAnimationFrame(step)
+        document.getElementById("start").innerText = startTime;
+        document.getElementById("run").addEventListener("click",function () {
+            element.style.width = "1px";
+            if(progress == 400){
+                progress = 0;
+            }
+            startTime = new Date().toLocaleTimeString();
+            document.getElementById("start").innerText = startTime;
+            request = requestAnimationFrame(step)
+        },false)
+        cancelAnimationFrame = window.cancelAnimationFrame || window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame || window.msRequestAnimationFrame
+        document.getElementById("cancel").addEventListener("click",function () {
+            cancelAnimationFrame(request)
+            endTime = new Date().toLocaleTimeString();
+            document.getElementById("end").innerText = endTime
+        },false)
+    </script>
+</body>
+</html>
