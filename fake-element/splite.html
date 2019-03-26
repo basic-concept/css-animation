@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Splite Line</title>
+    <style>
+        /*.splite::before{*/
+            /*border-radius: 5px;*/
+            /*height: 1px;*/
+            /*border: 1px solid fuchsia;*/
+            /*width: 100%;*/
+            /*content: ' ';*/
+            /*position: absolute;*/
+        /*}*/
+        .splite::before{
+            height: 0px;
+            border: 1px solid black;
+            width: 100%;
+            content: ' ';
+            position: absolute;
+
+        }
+        .splite1{
+            width:100%;
+            height:20px;
+            background-color:#f2f2f2;
+            padding-left: 23px;
+            color:#000;
+            font-size:20px;
+            line-height:20px;
+            position:relative;
+        }
+        .splite1::after{
+            content:"";
+            width:10px;
+            height:10px;
+            border-radius: 5px;
+            background-color:red;
+            position:absolute;
+            bottom:50%;
+            z-index:1;
+            left:0;
+            top: 5px;
+        }
+        .splite2{
+            color: #F2AE11;
+            font-size: 25px;
+            margin-bottom: 3em;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.1;
+            height: 50px;
+            display: block;
+        }
+        .splite2::before{
+            left: 2%;
+            content: '';
+            position: absolute;
+            width: 40%;
+            /*background: #939393;*/
+            border: 1px solid forestgreen;
+            background:linear-gradient(to left,#b6b6b6,#efefef);
+            margin-top: 12.5px;
+        }
+        .splite2::after{
+            right: 2%;
+            content: '';
+            position: absolute;
+            width: 40%;
+            /*background: #939393;*/
+            border: 1px solid red;
+            background:linear-gradient(to left,#efefef,#b6b6b6);
+            margin-top: 12.5px;
+        }
+        .choose{
+            counter-reset: fruit;
+        }
+        .choose input:checked{
+            counter-increment: fruit;
+        }
+        .count:before{
+            content:counter(fruit);
+        }
+        .skew{
+            width: 400px;
+            height: 80px;
+            line-height: 40px;
+            text-align: center;
+            position: relative;
+        }
+        .skew::after{
+            content: '';
+            transform: perspective(80px) rotateX(30deg) ;
+            background: hotpink;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: inline-block;
+            transform-origin: bottom;
+            width: 400px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <div>下方分割线</div>
+            <div class="splite">下方分割线</div>
+        </div>
+        <div>
+            <div class="splite1">左侧实心圆点</div>
+        </div>
+        <div>
+            <div class="splite2">双侧分割线</div>
+        </div>
+        <div>
+            <div class="choose">
+                <label><input type="checkbox">apple</label>
+                <label><input type="checkbox">orange</label>
+                <label><input type="checkbox">banana</label>
+                <label><input type="checkbox">watermelon</label>
+                <label><input type="checkbox">strawberry</label>
+                <label><input type="checkbox">peach</label>
+            </div>
+            <p>选择了<span class="count"></span>种水果</p>
+        </div>
+        <div>
+            <div class="skew">3d旋转</div>
+        </div>
+    </div>
+</body>
+</html>

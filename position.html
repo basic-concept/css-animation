@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Animation</title>
+    <style type="text/css">
+        .items{
+            border: 2px solid #939393;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            min-height: 200px;
+            margin-top: 20px;
+            /*overflow: auto;*/
+        }
+        /*.items:hover{*/
+            /*min-height: 650px;*/
+        /*}*/
+        .lines{
+            display: flex;
+        }
+        .title{
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .sec-title{
+            font-size: 20px;
+        }
+        .left{
+            width: 200px;
+            height: 600px;
+            background: red;
+            float: left;
+            display: table;
+            text-align: center;
+            line-height: 600px;
+            color: #fff;
+        }
+
+        .right{
+            margin-left: 210px;
+            height: 600px;
+            background: yellow;
+            text-align: center;
+            line-height: 600px;
+        }
+        .three-left{
+            width: 200px;height: 300px; background: yellow; float: left
+        }
+        .three-right{
+            width: 150px; height: 300px; background: green; float: right;
+        }
+        .three-middle{
+            height: 300px; background: red; margin-left: 220px; margin-right: 160px;
+        }
+        .left3{
+            background: yellow;
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .middle3{
+            height: 300px;
+            margin: 0 220px;
+            background: red;
+        }
+        .right3{
+            height: 300px;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: green;
+        }
+        .wrapper{
+            overflow: hidden;  //清除浮动
+        }
+        .wrapper-middle{
+            width: 100%;
+            float: left;
+        }
+        .wrapper-middle .main{
+            margin: 0 220px;
+            background: red;
+        }
+        .wrapper-left{
+            width: 200px;
+            height: 300px;
+            float: left;
+            background: green;
+            margin-left: -100%;
+        }
+        .wrapper-right{
+            width: 200px;
+            height: 300px;
+            float: left;
+            background: yellow;
+            margin-left: -200px;
+        }
+        .wrapper5{
+            display: flex;
+        }
+        .left5{
+            width: 200px;
+            height: 300px;
+            background: green;
+        }
+        .middle5{
+            width: 100%;
+            background: red;
+            marign: 0 20px;
+        }
+        .right5{
+            width: 200px;
+            height: 3000px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!--<div class="wrapper">-->
+            <!--<div class="wrapper-middle">-->
+                <!--<div class="main">中间</div>-->
+            <!--</div>-->
+            <!--<div class="wrapper-left">-->
+                <!--左栏-->
+            <!--</div>-->
+            <!--<div class="wrapper-right">-->
+                <!--右栏-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="wrapper5">
+            <div class="left5">左栏</div>
+            <div class="middle5">中间f</div>
+            <div class="right5">右栏</div>
+        </div>
+        <!--<div class="items">-->
+            <!--<div class="title">css布局-布局类型</div>-->
+            <!--<div class="lines">-->
+                <!--<div class="sec-title">布局类型</div>-->
+                <!--<div style="background:rebeccapurple;width: 200px;height: 200px;position: fixed;top: 50px;left: 50px"></div>-->
+                <!--<div style="background:fuchsia;width: 200px;height: 200px;position: fixed;top: 100px;left: 450px"></div>-->
+            <!--</div>-->
+            <!--<div class="lines" style="background: chartreuse;margin-top: 300px;font-size: 30px">-->
+                <!--Test-->
+                <!--<div style="width: 50%;font-size: 0.5em">尺寸</div>-->
+                <!--<div></div>-->
+            <!--</div>-->
+            <!--<div class="lines">-->
+                <!--<div class="sec-title">两栏布局float+margin</div>-->
+                <!--<div class="lines">-->
+                    <!--<div class="left">定宽</div>-->
+                    <!--<div class="right">自适应</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="lines">-->
+                <!--<div class="sec-title">三栏布局float+margin</div>-->
+                <!--<div class="lines">-->
+                    <!--<div class="three-left"></div>-->
+
+                    <!--<div class="three-middle"></div>-->
+                    <!--<div class="three-right"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<div class="left3">左栏</div>-->
+                <!--<div class="middle3">中间栏</div>-->
+                <!--<div class="right3">右栏</div>-->
+            <!--</div>-->
+        </div>
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>

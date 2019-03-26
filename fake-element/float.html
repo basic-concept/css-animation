@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clear Float</title>
+    <style>
+        .father{
+            background-color: gray;
+            border: solid 1px black;
+        }
+
+        .clear1{
+            background-color: fuchsia;
+            border: solid 1px black;
+            overflow: hidden;
+        }
+        .clear2{
+            background-color: goldenrod;
+            border: solid 1px black;
+        }
+        .clearfix::after{
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+        }
+        .clearfix{
+            zoom: 1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!--<div class="father">-->
+            <!--<div style="height: 40px;background: chartreuse;float: left"></div>-->
+            <!--<div style="clear: both"></div>-->
+        <!--</div>-->
+        <!--<div class="clear1">-->
+            <!--<div style="height: 40px;background: chartreuse;float: left"></div>-->
+        <!--</div>-->
+        <div class="clear2 clearfix">
+            <div style="height: 70px;background: chartreuse;float: left"></div>
+        </div>
+    </div>
+</body>
+</html>
